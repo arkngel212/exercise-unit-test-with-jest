@@ -1,26 +1,34 @@
-// Declaramos una función con el nombre exacto "fromEuroToDollar"
-const fromEuroToDollar = function(valueInEuro) {
-    // Convertimos el valor a dólares
-    let valueInDollar = valueInEuro * 1.07;
-    // Retornamos el valor en dólares
-    return valueInDollar;
+// Añadiendo constantes
+
+let oneEuroIs = {
+    "JPY": 156.5, // japan yen
+    "USD": 1.07, // us dollar
+    "GBP": 0.87, // british pound
 }
 
-// Declaramos una función con el nombre exacto "fromDollarToYen"
-const fromDollarToYen = function(valueInDollar) {
-    // Convertimos el valor a yenes
-    let valueInYen = valueInDollar / 1.07 * 156.5;
-    // Retornamos el valor en yenes
-    return valueInYen;
-}
+    // Declaramos una función con el nombre exacto "fromEuroToDollar"
+    const fromEuroToDollar = function(valueInEuro) {
+        // Convertimos el valor a dólares
+        let valueInDollar = valueInEuro * oneEuroIs["USD"];
+        // Retornamos el valor en dólares
+        return valueInDollar;
+    }
 
-// Declaramos una función con el nombre exacto "fromYenToPound"
-const fromYenToPound = function(valueInYen) {
-    // Convertimos el valor a pounds
-    let valueInPound = valueInYen / 156.5 * 0.87;
-    // Retornamos el valor en pounds
-    return valueInPound;
-}
+    // Declaramos una función con el nombre exacto "fromDollarToYen"
+    const fromDollarToYen = function(valueInDollar) {
+        // Convertimos el valor a yenes
+        let valueInYen = valueInDollar / oneEuroIs["USD"] * oneEuroIs["JPY"];
+        // Retornamos el valor en yenes
+        return valueInYen;
+    }
+
+    // Declaramos una función con el nombre exacto "fromYenToPound"
+    const fromYenToPound = function(valueInYen) {
+        // Convertimos el valor a pounds
+        let valueInPound = valueInYen / oneEuroIs["JPY"] * oneEuroIs["GBP"];
+        // Retornamos el valor en pounds
+        return valueInPound;
+    }
 
 // Contenido de app.js 
 console.log("Hello World")
